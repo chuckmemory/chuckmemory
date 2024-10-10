@@ -1,0 +1,400 @@
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Barra de navegação */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    min-height: 60px; /* Garante altura mínima */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilo para o ícone de laço de luto ao lado do texto "In Memoriam" */
+.nav-logo i {
+    color: black;       /* Cor do ícone */
+    margin-right: 8px;  /* Espaçamento entre o ícone e o texto */
+    font-size: 18px;    /* Tamanho do ícone, ajuste conforme necessário */
+    vertical-align: middle; /* Alinha o ícone ao meio do texto */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    padding: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #777;
+}
+
+/* Ícone do menu hambúrguer */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px; /* Mover o ícone para a direita */
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza o ícone verticalmente */
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Efeito de transição (fade-in) */
+.fade-in {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+
+.visible {
+    opacity: 1;
+}
+
+/* Seção de Homenagem */
+.hero-section {
+    background-color: #f0f0f0;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #666;
+}
+
+.photo-container {
+    margin-top: 30px;
+}
+
+.falecido-foto {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #ccc;
+}
+
+.data-container {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #444;
+}
+
+.data-container .date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.icon {
+    font-size: 24px;
+}
+
+/* Inicialmente oculta a seção de fotos */
+.photo-section {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Classe para exibir a seção de fotos com fade-in */
+.photo-section.fade-in {
+    opacity: 1;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.photo-section h2 {
+    font-size: 28px;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;  /* Adiciona rolagem se o conteúdo for maior que a tela */
+}
+
+/* Imagem dentro do Modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;    /* Limita a largura da imagem a 90% da largura da tela */
+    max-height: 80%;   /* Limita a altura da imagem a 80% da altura da tela */
+    width: auto;
+    height: auto;
+}
+
+/* Legenda (caption) */
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* Botão para fechar o Modal */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Setas de navegação */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.3s;
+}
+
+/* Botão da seta esquerda */
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Botão da seta direita */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Efeito hover nas setas */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Ocultar setas se não houver mais fotos */
+.hidden {
+    display: none;
+}
+
+/* Inicialmente oculta a seção sobre */
+.about-section {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Classe para exibir a seção sobre com fade-in */
+.about-section.fade-in {
+    opacity: 1;
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+
+.about-section h2 {
+    font-size: 28px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Footer moderno */
+.footer {
+    background-color: #333;
+    color: #f7f7f7;
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-section h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.footer-section p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-section a img {
+    width: 30px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #fff;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    /* Exibir logo novamente */
+    .nav-logo {
+        display: block;
+        padding-top: 20px;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        right: 50px; /* Mover o ícone para a direita */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .nav-menu.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link {
+        padding: 15px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 24px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .falecido-foto {
+        width: 120px;
+        height: 120px;
+    }
+
+    .gallery img {
+        width: 120px;
+        height: 100px;
+    }
+
+    .data-container {
+        font-size: 16px;
+    }
+
+    .footer-content {
+        padding: 0 10px;
+    }
+
+    .footer-section h2 {
+        font-size: 18px;
+    }
+}
