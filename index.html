@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Homenagem Póstuma</title>
+    <!-- Adiciona Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <i class="fas fa-ribbon"></i> In Memoriam</a>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <!-- Ícone de hambúrguer -->
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#home" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="#photos" class="nav-link">Fotos</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">Sobre</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Seção de Homenagem -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Homenagem a [Nome do Pessoa]</h1>
+            <p>"Amado pai, amigo e companheiro, seu legado de amor e bondade viverá para sempre em nossos corações."</p>
+        </div>
+        <div class="photo-container">
+            <img src="img/user-07.jpg" alt="Foto do Falecido" class="falecido-foto fade-in" id="falecidoFoto">
+        </div>
+        <div class="data-container">
+            <div class="date">
+                <span class="icon">&#9733;</span>
+                <span>Nascimento: 01/01/1950</span>
+            </div>
+            <div class="date">
+                <span class="icon">&#10013;</span>
+                <span>Falecimento: 10/10/2024</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Fotos -->
+    <section id="photos" class="photo-section">
+    <h2>Memórias em Fotos</h2>
+    <div class="gallery">
+        <img src="img/user-03.jpg" alt="Foto 1" class="gallery-img" data-index="0">
+        <img src="img/user-06.jpg" alt="Foto 2" class="gallery-img" data-index="1">
+        <img src="img/user-07.jpg" alt="Foto 3" class="gallery-img" data-index="2">
+        <img src="img/user-03.jpg" alt="Foto 4" class="gallery-img" data-index="3">
+        <img src="img/user-06.jpg" alt="Foto 5" class="gallery-img" data-index="4">
+        <img src="img/user-07.jpg" alt="Foto 6" class="gallery-img" data-index="5">
+    </div>
+    </section>
+
+    <!-- Modal para exibição da imagem em tamanho grande -->
+    <div id="photoModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div class="caption" id="caption"></div>
+    
+    <!-- Setas de navegação -->
+    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+    <a class="next" onclick="changeImage(1)">&#10095;</a>
+    </div>
+
+    <!-- Seção Sobre -->
+    <section id="about" class="about-section">
+        <h2>Sobre [Nome do Falecido]</h2>
+        <p>[Nome do Falecido] foi um homem de grandes virtudes, marcado pela sua generosidade, carinho e dedicação à família e aos amigos. Ao longo de sua vida, desempenhou muitos papéis importantes: como pai, amigo, conselheiro e exemplo para todos à sua volta.
+
+        <p>Sua presença sempre foi sinônimo de amor e companheirismo, deixando marcas profundas em quem teve o privilégio de conhecê-lo. Com seu sorriso acolhedor e palavras sábias, [Nome do Falecido] soube transformar momentos simples em lembranças inesquecíveis.</p>
+            
+        <p>Seus ensinamentos e seu espírito gentil continuam vivos nos corações daqueles que o amam. Sua memória será para sempre honrada e lembrada com carinho, mantendo vivo o legado de amor, fé e amizade que ele construiu ao longo de sua jornada.</p>
+    </section>
+
+    <!-- Footer moderno -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>Sobre a Empresa</h2>
+                <p>Este site foi desenvolvido pela <strong>Memory Company</strong>, especializada em criar homenagens digitais personalizadas, trazendo conforto e preservando as memórias de quem amamos.</p>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contato</h2>
+                <p>Email: contato@empresa.com</p>
+                <p>Telefone: (99) 9999-9999</p>
+            </div>
+            <div class="footer-section social">
+                <h2>Redes Sociais</h2>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Memory Company - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
